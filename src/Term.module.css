@@ -1,0 +1,90 @@
+.monitor {
+	/* width: 80ch; */
+    /* width:80ch; */
+	height: 10ch;
+	overflow: hidden;
+	user-select: none; 
+	position: relative;
+}
+.code{
+	position: relative;
+	left: 8ch;
+	width: 75ch;
+    top:0;
+}
+.clear{
+	clear:both
+}
+.line   {
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	white-space: pre;
+	width: 0;
+	float:left;
+
+}
+.lineNumbers{
+	position: absolute;
+	/* top: -0.1254em; */
+	width: 4ch; /* works for line-numbers below 1000 lines */
+	border-right: 1px solid #999;
+
+
+}
+.lineNumbers > span {
+	display: block;
+	/* counter-increment: linenumber; */
+	color: #999;
+	display: block;
+	text-align: right;
+    padding: 0px;
+    margin: 0px;
+
+padding-right:0.2em;
+}
+.lineNumbers > span.currentLineNumber{
+	color: green;
+
+}
+
+/* .lineNumbers > span:before { */
+/* 	content: counter(linenumber); */
+/* 	color: #999; */
+/* 	display: block; */
+/* 	padding-right: 0.8em; */
+/* 	text-align: right; */
+/* } */
+
+.currentLine{
+
+	animation: 
+		typing var(--time) steps(var(--num-ch)) ;
+	animation-delay: var(--delay);
+	animation-fill-mode: forwards;
+}
+.completedLine {
+	width: var(--ch)
+
+}
+/* The typing effect */
+@keyframes typing {
+from { width: 0 }
+to { width: var(--ch) }
+}
+
+.cursor{
+	width: 2px;
+	height: 1.2em;
+	background-color: orange;
+	float:left;
+     animation: blink 1s step-end infinite;
+}
+/* The typewriter cursor effect */
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
