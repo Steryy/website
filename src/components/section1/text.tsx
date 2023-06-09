@@ -1,5 +1,4 @@
-
-export default `dwa
+export default `
 import styles from "../styles/Term.module.css";
 import text from "./text";
 import Prism from 'prismjs';
@@ -117,4 +116,4 @@ dangerouslySetInnerHTML={{ __html: item }}
 </div>
 );
 }
-`
+`;
