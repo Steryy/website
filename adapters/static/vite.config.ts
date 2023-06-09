@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
 		},
 		plugins: [
 			staticAdapter({
-				origin: "https://steryy.github.io",
+				origin: "https://415e2175.website-as6.pages.dev/",
 			}),
 		],
 	};

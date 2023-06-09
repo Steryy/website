@@ -42,7 +42,7 @@
     "wrangler": "^3.0.0"
   },
   "dependencies": {
-    "@qwikest/icons": "^0.0.8",
+    "@qwikest/icons": "0.0.8",
     "@types/prismjs": "^1.26.0",
     "prismjs": "^1.29.0"
   }
