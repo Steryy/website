@@ -1,7 +1,6 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-
-import { BsList } from "@qwikest/icons/bootstrap";
+import "bootstrap-icons/font/bootstrap-icons.css";
 export const onGet: RequestHandler = async ({ cacheControl }) => {
 	// Control caching for this request for best performance and to reduce hosting costs:
 	// https://qwik.builder.io/docs/caching/
@@ -18,7 +17,7 @@ export default component$(() => {
 		<main>
 			<nav class="flex dark:bg-white dark:text-black justify-between z-30 text-white bg-black  p-3  fixed w-full xlg">
 				<span class="hover:font-bold">Meet Me</span>
-				<BsList class="hover:rotate-90 transition-transform text-xl" />
+				<i class="bi bi-list hover:rotate-90 transition-transform text-xl" />
 			</nav>
 			<Slot />
 		</main>

@@ -1,4 +1,4 @@
-import { SiEslint, SiGithub, SiTailwindcss } from "@qwikest/icons/simpleicons";
+import { siEslint, siGithub, siTailwindcss } from "simple-icons";
 import { QwikLogo } from "../starter/icons/qwik";
 const PrismJs = () => (
 	<svg width="35" height="35">
@@ -10,7 +10,14 @@ const PrismJs = () => (
 		/>
 	</svg>
 );
-const cards = [
+type card = {
+	title: string;
+	colorFg: string;
+	url: string;
+	text: any;
+	icon: any;
+};
+const cards: card[] = [
 	{
 		title: "GitHub",
 		colorFg: "text-[#181717]",
@@ -20,7 +27,7 @@ const cards = [
 				Github
 			</>
 		),
-		icon: SiGithub,
+		icon: siGithub,
 	},
 	{
 		title: "PrismJs",
@@ -32,14 +39,14 @@ const cards = [
 	},
 	{
 		title: "tailwindcss",
-		icon: SiTailwindcss,
+		icon: siTailwindcss,
 		colorFg: "text-[#06B6D4]",
 		url: "https://tailwindcss.com/",
 		text: <>tailwindcss</>,
 	},
 	{
 		title: "Eslint",
-		icon: SiEslint,
+		icon: siEslint,
 		url: "https://eslint.org/",
 		colorFg: "text-[#4B32C3]",
 
@@ -62,7 +69,17 @@ export default function Section4() {
 			</div>
 			<div class=" mx-auto py-5 flex  justify-between gap-10  ">
 				{cards?.map((item, id) => {
-					const Icon = item.icon;
+					let Icon: any;
+					if (typeof (item.icon) == "function") {
+						Icon = item.icon;
+					} else {
+						const Pris = () => (
+							<svg width="35" height="35" viewbox="0 0 25 25">
+								<path d={item.icon.path}/>
+							</svg>
+						);
+						Icon = Pris;
+					}
 					return (
 						<div class={"group w-40"} key={id}>
 							<a href={`${item.url}`}>
@@ -71,7 +88,6 @@ export default function Section4() {
 								>
 									<Icon />
 								</div>
-
 								<div class="text-gray-100 text-center text-base group-hover:block hidden">
 									{item.title}
 								</div>

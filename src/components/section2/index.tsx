@@ -1,9 +1,5 @@
-import {
-	SiGnubash,
-	SiLinux,
-	SiNeovim,
-	SiWindows,
-} from "@qwikest/icons/simpleicons";
+import { siGnubash, siLinux, siNeovim, siWindows } from "simple-icons";
+console.log(siGnubash);
 import Progress from "../shared/progress";
 import Card from "../shared/card";
 const cards = [
@@ -22,11 +18,11 @@ const cards = [
 				</span>
 			</>
 		),
-		icon: SiLinux,
+		icon: siLinux,
 	},
 	{
 		title: "NeoVim",
-		icon: SiNeovim,
+		icon: siNeovim,
 		colorFg: "text-[#57A143]",
 
 		text: <>Lorem ipsum dolor sit cin.</>,
@@ -35,7 +31,7 @@ const cards = [
 	},
 	{
 		title: "Bash",
-		icon: SiGnubash,
+		icon: siGnubash,
 		colorFg: "text-black",
 		proc: 60,
 
@@ -49,7 +45,7 @@ const cards = [
 	},
 	{
 		title: "Windows",
-		icon: SiWindows,
+		icon: siWindows,
 		colorFg: "text-[#0078D6]",
 		proc: 10,
 
@@ -67,7 +63,7 @@ export default function Section2() {
 			</div>
 			<div class="w-3/4 mx-auto py-5 grid md:grid-cols-2 gap-10  ">
 				{cards?.map((item, id) => {
-					const Icon = item.icon;
+					const Icon = item.icon.path;
 					const Text = item.text;
 					return (
 						<Card key={id}>
@@ -77,7 +73,9 @@ export default function Section2() {
 								<div
 									class={`${item.colorFg} w-min text-6xl ml-auto mr-auto mt-10`}
 								>
-									<Icon />
+									<svg width={'50px'} viewbox="0 0 24 24">
+										<path d={Icon} fill={`#${item.icon.hex}`} />
+									</svg>
 								</div>
 								<Progress
 									text={item.title}
