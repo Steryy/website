@@ -28,7 +28,7 @@ export default component$(() => {
 				<Resource
 					value={reposResource}
 					onPending={() => <>Loading...</>}
-					onRejected={(error) => <>Error: {error.message}</>}
+					onRejected={(error) =>{ console.log(error); return <>Error: {error.message}</>}}
 					onResolved={(repos) => (
 						<ul>
 							{repos.map((repo, id) => {
@@ -88,6 +88,7 @@ export async function getRepositories(
 	username: string,
 	controller?: AbortController,
 ): Promise<gitRepo[]> {
+	console.log("dwadwad")
 	if (env == "development") {
 		const json = [
 			{

@@ -13,7 +13,6 @@ export default extendConfig(baseConfig, () => {
 		plugins: [
 			staticAdapter({
 				origin: "https://steryy.github.io",
-				base:'website'
 			}),
 		],
 	};
