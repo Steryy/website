@@ -1,0 +1,19 @@
+
+.card {
+transform-origin: center center;
+}
+
+.card:hover{
+ animation: select 0.52s ease-in-out forwards;
+}
+@keyframes select {
+25%{
+transform:rotate(-5deg) scale(0.9);
+
+
+}
+100%{
+transform:rotate(10deg) scale(1.2);
+
+}
+}

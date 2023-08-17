@@ -2,10 +2,6 @@
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /**
  * WHAT IS THIS FILE?
  *
@@ -22,8 +18,10 @@ html {
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 }
-
-body {
-  padding: 0;
-  line-height: inherit;
+body{
+/* scroll-behavior: smooth; */
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }

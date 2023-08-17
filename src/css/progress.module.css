@@ -1,0 +1,11 @@
+.progresBar{
+	  animation: glow 3s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--barColor), 0 0 40px var(--barColor), 0 0 50px var(--barColor), 0 0 60px var(--barColor), 0 0 70px var(--barColor);
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px var(--barColorLight), 0 0 40px var(--barColorLight), 0 0 50px var(--barColorLight), 0 0 60px var(--barColorLight), 0 0 70px var(--barColorLight), 0 0 80px var(--barColorLight);
+  }
+}

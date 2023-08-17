@@ -1,0 +1,19 @@
+.card {
+transform-origin: center center;
+}
+
+.card:hover{
+ animation: shake 0.82s ease-in-out both;
+}
+@keyframes shake {
+25%{
+
+transform:rotate(5deg);
+
+}
+75%{
+
+transform:rotate(-5deg);
+
+}
+}
