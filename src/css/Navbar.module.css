@@ -1,0 +1,10 @@
+.myhover a:hover {
+
+
+color:red;
+}
+.myhover a {
+transition: 0.3s;
+
+	padding: 0.5rem;
+}
