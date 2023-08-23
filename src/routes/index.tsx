@@ -9,8 +9,13 @@ import Section4 from "~/components/section4";
 export default component$(() => {
   return (
     <>
+			<a id='intro'/>
       <Section1 />
+
+			<a id='interest'/>
       <Section2 />
+
+			<a id='projects'/>
       <Section3 />
 			<Section4/>
     </>
@@ -18,11 +23,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-	title: "Welcome to Qwik",
-	meta: [
-		{
-			name: "description",
-			content: "Qwik site description",
-		},
-	],
+  title: "Index",
+  meta: [
+    {
+      name: "description",
+      content: "Personal site",
+    },
+  ],
 };
