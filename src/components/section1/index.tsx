@@ -107,7 +107,7 @@ export default component$(() => {
   const scroll = useSignal(0);
   useVisibleTask$(() => {
     scroll.value = window.scrollY;
-    if (window.scrollY > 0) {
+    if (window.scrollY > 300) {
       paused.value = true;
     }
   });
@@ -117,15 +117,15 @@ export default component$(() => {
         <div class="text-3xl lg:text-3xl absolute top-[150px]  left-[50%] -translate-x-1/2 ">
           Welcome
         </div>
-        <div class="w-[40ch]  sm:w-[80ch] text-xs  absolute top-80 
+        <div class="w-[50ch]   md:text-lg   text-xs absolute top-80 
                 left-1/2
                 -translate-x-1/2
-                md:mr-0  bg-black text-white  lg:text-sm  dark:bg-gray-950">
+                md:mr-0  bg-black text-white   dark:bg-gray-950">
           <Termianl
             charTime={0.1}
             lineTime={0.1}
             pause={paused}
-            lines={10}
+            lines={22}
             bacgroundColor={"#000000"}
           />
         </div>

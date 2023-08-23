@@ -1,44 +1,44 @@
 import styles from "../../Term.module.css";
 import "../../prism.css";
-<<<<<<< HEAD
-import type { Signal } from "@builder.io/qwik";
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-=======
 import {
   component$,
   Signal,
   useSignal,
   useVisibleTask$,
 } from "@builder.io/qwik";
->>>>>>> b03ae53 (Clan code in terminal.tsx and add pausing on scroll)
 import text from "./text";
 
 import Prism from "prismjs";
 
-const html = Prism.highlight(text, Prism.languages.js, "js");
+import 'prismjs/components/prism-lua';
+import 'prismjs/components/prism-bash';
+
+import 'prismjs/themes/prism.css'
+const html = Prism.highlight(text, Prism.languages.bash, "bash");
 const code: string[] = html.split("\n");
+
 const lineChars: number[] = [];
 const regex = /(<([^>]+)>)/gi;
-for (let i = 0; i < code.length; i++) {
-<<<<<<< HEAD
-	const chars = code[i].replace(regex, "").trim();
-	lineChars[i] = chars.length;
-}
-interface TypeWriterProps {
-	charTime: number;
-	lineTime: number;
-	pause: Signal;
-	lines: number;
-	bacgroundColor: string;
-}
-function cursor(index: number, currLine: number) {
-	if (index == currLine) {
-		return <div class={styles.cursor}></div>;
-	}
+let previous_span=""
 
-	return <span class={"clear-both"}></span>;
-=======
+for (let i = 0; i < code.length; i++) {
+	const spans = code[i].match(/\<span\s+class="(.*?)">/g) ||[]
+	const closed =code[i].match(/<\/span>/g)||[]
   const chars = code[i].replace(regex, "").trim();
+	if (spans > closed){
+		code[i] = code[i] +"</span>"
+		previous_span = spans[spans.length-1]
+	}
+	if (previous_span != ""  && spans <=closed){
+		code[i] = previous_span + code[i]
+		if (closed > spans){
+				previous_span = ""
+
+		}else{
+		code[i] = code[i]+"</span>"
+		}
+
+	}
   lineChars[i] = chars.length;
 }
 interface TypeWriterProps {
@@ -54,7 +54,6 @@ function cursor(index: number, currLine: number) {
   }
 
   return <span class={"clear-both"}></span>;
->>>>>>> b03ae53 (Clan code in terminal.tsx and add pausing on scroll)
 }
 enum lineNumbersType {
 	NoLineNumbers,
@@ -177,7 +176,6 @@ export default component$(({
 			</div>
 		</div>
 	);
-=======
   charTime,
   lineTime,
   pause,
@@ -195,6 +193,7 @@ export default component$(({
     height: `${height}em`,
     bacgroundColor: bacgroundcolor,
   };
+		const lineHeight =' h-5 md:h-6'
   function ifPrint(item: string, index: number) {
     if (currLine.value > index + maxlines - 1) {
       return false;
@@ -223,7 +222,7 @@ export default component$(({
           }
           return (
             <span
-              class={index == currLine.value ? "currentLineNumber" : ""}
+              class={index == currLine.value ? "currentLineNumber " + lineHeight : lineHeight}
               key={index}
             >
               {num}
@@ -231,7 +230,7 @@ export default component$(({
           );
         })}
       </div>
-      <div class="absolute left-[5ch] top-0 font-mono">
+      <div class="absolute left-[3.6ch] top-0 font-mono">
         {code.map((item: string, index: number) => {
           const time = lineChars[index] * chartime / 10 + 0.01;
           let showclass = "h-4";
@@ -264,7 +263,7 @@ export default component$(({
           }
 
           return (
-            <div key={index} class={showclass}>
+            <div key={index} class={showclass + lineHeight}>
               <div
                 onAnimationEnd$={() => {
                   if (code.length - 2 >= currLine.value) {
@@ -274,7 +273,7 @@ export default component$(({
                   }
                 }}
                 style={animation}
-                class={classs + " overflow-hidden whitespace-pre"}
+                class={classs + " overflow-hidden whitespace-pre "}
                 dangerouslySetInnerHTML={item}
               >
               </div>
@@ -285,5 +284,4 @@ export default component$(({
       </div>
     </div>
   );
->>>>>>> b03ae53 (Clan code in terminal.tsx and add pausing on scroll)
 });

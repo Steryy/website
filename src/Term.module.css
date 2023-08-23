@@ -25,7 +25,7 @@
 .lineNumbers{
 	position: absolute;
 	/* top: -0.1254em; */
-	width: 4ch; /* works for line-numbers below 1000 lines */
+	width: 3ch; /* works for line-numbers below 1000 lines */
 	border-right: 1px solid #999;
 
 
