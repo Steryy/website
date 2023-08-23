@@ -25,7 +25,7 @@ lerna-debug.log*
 
 # Editor
 .vscode/*
-!.vscode/extensions.json
+
 .idea
 .DS_Store
 *.suo
@@ -37,6 +37,3 @@ lerna-debug.log*
 # Yarn
 .yarn/*
 !.yarn/releases
-
-# Cloudflare
-functions/**/*.js

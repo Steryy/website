@@ -3,17 +3,17 @@ import { extendConfig } from "@builder.io/qwik-city/vite";
 import baseConfig from "../../vite.config";
 
 export default extendConfig(baseConfig, () => {
-	return {
-		build: {
-			ssr: true,
-			rollupOptions: {
-				input: ["@qwik-city-plan"],
-			},
-		},
-		plugins: [
-			staticAdapter({
-				origin: "https://415e2175.website-as6.pages.dev/",
-			}),
-		],
-	};
+  return {
+    build: {
+      ssr: true,
+      rollupOptions: {
+        input: ["@qwik-city-plan"],
+      },
+    },
+    plugins: [
+      staticAdapter({
+        origin: "https:/steryy.xyz",
+      }),
+    ],
+  };
 });
