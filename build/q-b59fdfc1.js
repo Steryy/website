@@ -1,0 +1,1 @@
+import{$ as s,h as a,j as l}from"./q-955148ae.js";const d=()=>s("div",null,{class:"max-w-max rounded  shadow-lg shadow-gray-900 bg-gray-50 "},s("div",null,{class:"px-6 py-4"},a(l,null,3,"Lw_0"),1,null),1,"Lw_1");export{d as s_9VdiDPI3g7c};
