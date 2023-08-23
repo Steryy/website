@@ -24,10 +24,7 @@ const InterSection = component$(({ paused, scroll }: interS) => {
     }
   });
 
-  return (
-    <div class={" mt-20 bg-red-100"}>
-    </div>
-  );
+  return <div class={" mt-20 bg-red-100"}></div>;
 });
 
 export default component$(() => {
@@ -45,10 +42,12 @@ export default component$(() => {
         <div class="text-3xl lg:text-3xl absolute top-[150px]  left-[50%] -translate-x-1/2 ">
           Welcome
         </div>
-        <div class="w-[50ch]   md:text-lg   text-xs absolute top-80 
+        <div
+          class="w-[50ch]   md:text-lg   text-xs absolute top-80 
                 left-1/2
                 -translate-x-1/2
-                md:mr-0  bg-black text-white   dark:bg-gray-950">
+                md:mr-0  bg-black text-white   dark:bg-gray-950"
+        >
           <Termianl
             charTime={0.1}
             lineTime={0.1}
@@ -57,15 +56,14 @@ export default component$(() => {
             bacgroundColor={"#000000"}
           />
         </div>
+
         <div
           style={{
-            "clipPath":
+            clipPath:
               " polygon(55% 13%, 100% 0, 100% 60%, 100% 100%, 0 100%, 0 60%, 42% 42%); ",
           }}
-          class="absolute w-full min-h-[50vh]  bottom-0 dark:bg-white dark:text-black"
-        >
-          Penguin
-        </div>
+          class="absolute w-full min-h-[50vh]  bottom-[-80vw] dark:bg-white dark:text-black"
+        ></div>
       </div>
       <div class={"h-40 pt-30"}>
         <InterSection paused={paused} scroll={scroll} />
