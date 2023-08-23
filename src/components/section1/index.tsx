@@ -16,7 +16,7 @@ const InterSection = component$(({ paused, scroll }: interS) => {
 
       document.body.classList.add("stop-scrolling");
       setTimeout(() => {
-        window.scroll(0, 95);
+        // window.scroll(0, 200);
       }, 100);
       setTimeout(() => {
         document.body.classList.remove("stop-scrolling");
@@ -35,13 +35,13 @@ export default component$(() => {
   const scroll = useSignal(0);
   useVisibleTask$(() => {
     scroll.value = window.scrollY;
-    if (window.scrollY > 300) {
+    if (window.scrollY > 400) {
       paused.value = true;
     }
   });
   return (
     <div class={"dark:bg-black dark:text-white"}>
-      <div class="w-full relative pt-32 min-h-screen  ">
+      <div class="w-full relative pt-32 h-[120vh]  ">
         <div class="text-3xl lg:text-3xl absolute top-[150px]  left-[50%] -translate-x-1/2 ">
           Welcome
         </div>

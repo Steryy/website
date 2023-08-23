@@ -1,22 +1,23 @@
 import { component$, Slot, useSignal } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
+import type { RequestHandler } from "@builder.io/qwik-city";
 import styles from "../css/Navbar.module.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+export const onGet: RequestHandler = async ({ cacheControl }) => {
+	// Control caching for this request for best performance and to reduce hosting costs:
+	// https://qwik.builder.io/docs/caching/
+	cacheControl({
+		// Always serve a cached response by default, up to a week stale
+		staleWhileRevalidate: 60 * 60 * 24 * 7,
+		// Max once every 5 seconds, revalidate on the server to get a fresh version of this page
+		maxAge: 5,
+	});
+};
 
-import { qwikify$ } from "@builder.io/qwik-react";
-
-import { FaBars } from "react-icons/fa";
-const FaQwik = qwikify$(FaBars);
-export const useServerTimeLoader = routeLoader$(() => {
-  return {
-    date: new Date().toISOString(),
-  };
-});
-
-       // <!-- <span class="hover:font-bold cursor-pointer"><img src="/favicon.ico"/></span> -->
 export default component$(() => {
+
   const opened = useSignal(false);
-  return (
-    <main>
+	return (
+	<main>
       <nav class="bottom-0 text-3xl  md:top-0 md:h-min flex dark:bg-white dark:text-black justify-between z-30 text-white bg-black  p-3  fixed w-full xlg">
         <span class="hover:font-bold cursor-pointer"></span> 
       <div
@@ -48,16 +49,16 @@ export default component$(() => {
             opened.value = true;
           }}
         >
-          <FaQwik
+          <i
             onClick$={() => {
               opened.value = true;
             }}
-            className="md:hidden hover:rotate-90 transition-transform"
+            class="bi bi-list hover:rotate-90 transition-transform text-xl md:hidden"
           />
         </button>
       </nav>
 
       <Slot />
     </main>
-  );
+	);
 });
