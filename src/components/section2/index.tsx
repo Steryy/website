@@ -32,7 +32,7 @@ const cards = [
     icon: SiNeovim,
     colorFg: "#57A143",
 
-    text: <>dwadwadwa</>,
+    text: <>Everyone is joking about exiting vim. But noone knows how to exit GNU/Emacs.</>,
     proc: 80,
     colorBg: "#57A143",
   },
@@ -41,8 +41,8 @@ const cards = [
     icon: SiGnubash,
     colorFg: "#000000",
 
-    text: <>dwadwadwa</>,
-    proc: 80,
+    text: <>Only language you have to know little bit to use it.</>,
+    proc: 60,
     colorBg: "#dd1122",
   },
   {
@@ -51,7 +51,7 @@ const cards = [
     colorFg: "#0078D6",
     proc: 10,
 
-    text: <>My basement doesn't have any Windows</>,
+    text: <>Who need's windows if you have light from monitor and led strips?</>,
     // text: "My basement doesn't have any Windows.",
     colorBg: "#0078D6",
   },
@@ -72,7 +72,8 @@ export default function Section2() {
             <Card >
               <div class={'md:max-w-[50vw]  max-w-[70vw] md:min-w-[20vw]  min-w-[70vw]'}>
                 <div
-                  class={`text-[${item.colorFg}] w-min text-6xl ml-auto mr-auto mt-10`}
+                  class={` w-min text-6xl ml-auto mr-auto mt-10`}
+										style={{color:item.colorFg}}
                 >
                   <Icon />
                 </div>
