@@ -18,7 +18,7 @@ export default component$(() => {
   const opened = useSignal(false);
 	return (
 	<main>
-      <nav class="bottom-0 text-3xl  md:top-0 md:h-min flex dark:bg-white dark:text-black justify-between z-30 text-white bg-black  p-3  fixed w-full xlg">
+      <nav class="bottom-0 text-3xl  md:top-0 md:h-min flex  justify-between z-30 text-white bg-black  p-3  fixed w-full xlg">
         <span class="hover:font-bold cursor-pointer"></span> 
       <div
         id="myNav"
@@ -29,14 +29,14 @@ export default component$(() => {
           onClick$={() => {
             opened.value = false;
           }}
-          class="absolute right-7 bottom-8 text-white text-6xl md:hidden"
+          class="absolute right-7 bottom-14 text-white text-6xl md:hidden"
         >
           &times;
         </button>
         <div
           class={
             styles.myhover +
-            " flex items-center justify-center flex-col md:flex-row text-5xl absolute md:static right-28 bottom-20 md:text-xl"
+            " flex items-center justify-center flex-col md:flex-row text-5xl absolute md:static right-28 bottom-32 md:text-xl"
           }
         >
           <a href="#intro">Me</a>
