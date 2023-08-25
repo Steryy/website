@@ -113,7 +113,7 @@ export default component$(({
 					);
 				})}
 			</div>
-			<div class="absolute left-[3.6ch] top-0 font-mono">
+			<div class="absolute left-[3.3ch] top-0 font-mono">
 				{code.map((item: string, index: number) => {
 					const time = lineChars[index] * chartime / 10 + 0.01;
 					let showclass = "h-4";

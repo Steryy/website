@@ -83,7 +83,7 @@ export default function Section2() {
                     colorFg={item?.colorFg}
                   />
 
-                  <div class="text-gray-700 text-base">{Text}</div>
+                  <div class="text-black text-base">{Text}</div>
                 </div>
               </Card>
             </div>
