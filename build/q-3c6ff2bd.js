@@ -1,1 +1,0 @@
-import{O as e,c as t,_ as o}from"./q-955148ae.js";const a=e(t(()=>o(()=>import("./q-fcd74100.js"),["build/q-fcd74100.js","build/q-e2841a13.js","build/q-955148ae.js","build/q-6271b5d7.js","build/q-741eb329.js"]),"s_B0lqk5IDDy4")),i={title:"Index",meta:[{name:"description",content:"Personal site"}]};export{a as default,i as head};
