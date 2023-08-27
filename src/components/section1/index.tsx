@@ -12,7 +12,7 @@ type interS = {
 const InterSection = component$(({ paused, scroll }: interS) => {
   useVisibleTask$(() => {
     if (scroll.value == 0 && paused.value == false) {
-      paused.value = true;
+      // paused.value = true;
 
       document.body.classList.add("stop-scrolling");
       setTimeout(() => {
@@ -37,13 +37,13 @@ export default component$(() => {
     }
   });
   return (
-    <div class={""}>
+    <div >
       <div class="w-full relative pt-32 h-[120vh]  ">
         <div class="text-3xl lg:text-3xl absolute top-[150px]  left-[50%] -translate-x-1/2 ">
           Welcome
         </div>
         <div
-          class="w-[54ch]   md:text-lg   text-xs absolute top-80 
+          class="w-[54ch]   md:text-lg   text-xs absolute top-80
                 left-1/2
                 -translate-x-1/2
                 md:mr-0  bg-black text-white   "

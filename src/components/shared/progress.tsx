@@ -4,7 +4,6 @@ type progresComponent = {
   text: string | undefined;
   perc: number;
   percText: string | undefined;
-  colorFg: string;
   colorBg: string;
 };
 const newShade = (hexColor: string, magnitude: number) => {
@@ -26,7 +25,7 @@ const newShade = (hexColor: string, magnitude: number) => {
   }
 };
 export default component$(
-  ({ text, perc, colorBg, colorFg, percText }: progresComponent) => {
+  ({ text, perc, colorBg,percText }: progresComponent) => {
     const left = perc > 0 ? 0 : `${perc}%`;
     const proc = perc > 0 ? perc : perc * -1;
 
@@ -35,7 +34,7 @@ export default component$(
       <>
         <div class="flex justify-between mb-1 mr-10 ml-10">
           <span class={`text-base font-medium text-black `}>{text}</span>
-          <span class={`text-sm font-medium text-black `}>
+          <span class={`text-sm font-medium  text-black`}>
             {percText != undefined ? percText : perc + "%"}
           </span>
         </div>

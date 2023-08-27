@@ -80,7 +80,6 @@ export default function Section2() {
                     perc={item.proc}
                     percText={item?.procText}
                     colorBg={item?.colorBg}
-                    colorFg={item?.colorFg}
                   />
 
                   <div class="text-black text-base">{Text}</div>
